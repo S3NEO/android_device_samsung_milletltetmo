@@ -1,2 +1,2 @@
-add_lunch_combo lineage_s3ve3gjv-eng
-add_lunch_combo lineage_s3ve3gjv-userdebug
+add_lunch_combo lineage_milletlte-eng
+add_lunch_combo lineage_milletlte-userdebug

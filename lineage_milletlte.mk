@@ -1,4 +1,6 @@
-# Copyright (C) 2014 The CyanogenMod Project
+#
+# Copyright (C) 2014-2016 The CyanogenMod Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,16 +13,13 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+# Inherit some common LineageOS stuff.
+$(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, vendor/lineage/config/data_only.mk)
 
-# Inherit from s3ve3g device
-$(call inherit-product, device/samsung/s3ve3gjv/device.mk)
+$(call inherit-product, device/samsung/milletlte/full_milletlte.mk)
 
-# Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := full_s3ve3gjv
-PRODUCT_DEVICE := s3ve3gjv
-PRODUCT_BRAND := samsung
-PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := s3ve3gjv
+PRODUCT_DEVICE := milletlte
+PRODUCT_NAME := lineage_milletlte

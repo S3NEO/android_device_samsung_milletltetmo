@@ -14,20 +14,20 @@
 # limitations under the License.
 
 # inherit from common s3ve3g
-include device/samsung/s3ve3g-common/BoardConfigCommon.mk
+include device/samsung/millet-common/BoardConfigCommon.mk
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := milletlte
 
 # Kernel
-TARGET_KERNEL_CONFIG := lineage_s3ve3gjv_defconfig
+TARGET_KERNEL_CONFIG := lineage_milletlte_defconfig
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm8226
-TARGET_LIBINIT_MSM8226_DEFINES_FILE := device/samsung/s3ve3gjv/init/init_s3ve3g.cpp
-
-# NFC
-# include $(COMMON_PATH)/nfc/pn547/board.mk
+TARGET_LIBINIT_MSM8226_DEFINES_FILE := device/samsung/milletlte/init/init_millet.cpp
 
 # Radio/RIL
 include $(COMMON_PATH)/radio/single/board.mk
 
 # inherit from the proprietary version
--include vendor/samsung/s3ve3gjv/BoardConfigVendor.mk
+-include vendor/samsung/milletlte/BoardConfigVendor.mk
