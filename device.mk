@@ -23,5 +23,9 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/samsung/milletlte/milletlte-vendor.mk)
 
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl
+
 # common millet
 $(call inherit-product, device/samsung/millet-common/millet.mk)
