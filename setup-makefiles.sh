@@ -17,7 +17,7 @@
 
 set -e
 
-export DEVICE=milletlte
+export DEVICE=milletltetmo
 export DEVICE_COMMON=millet-common
 export VENDOR=samsung
 

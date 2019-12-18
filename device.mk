@@ -21,7 +21,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/samsung/milletlte/milletlte-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/milletltetmo/milletltetmo-vendor.mk)
 
 # Vibrator
 PRODUCT_PACKAGES += \

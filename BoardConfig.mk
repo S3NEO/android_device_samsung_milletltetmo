@@ -17,20 +17,20 @@
 include device/samsung/millet-common/BoardConfigCommon.mk
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := milletlte
+TARGET_OTA_ASSERT_DEVICE := millet,milletltetmo
 
 # Kernel
-TARGET_KERNEL_CONFIG := lineage_milletlte_defconfig
+TARGET_KERNEL_CONFIG := lineage_milletltetmo_defconfig
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm8226
-TARGET_LIBINIT_MSM8226_DEFINES_FILE := device/samsung/milletlte/init/init_millet.cpp
+TARGET_LIBINIT_MSM8226_DEFINES_FILE := device/samsung/milletltetmo/init/init_millet.cpp
 
 # Radio/RIL
 include $(COMMON_PATH)/radio/single/board.mk
 
 # HIDL
-DEVICE_MANIFEST_FILE += device/samsung/milletlte/manifest.xml
+DEVICE_MANIFEST_FILE += device/samsung/milletltetmo/manifest.xml
 
 # inherit from the proprietary version
--include vendor/samsung/milletlte/BoardConfigVendor.mk
+-include vendor/samsung/milletltetmo/BoardConfigVendor.mk

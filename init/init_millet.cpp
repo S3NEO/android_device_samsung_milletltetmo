@@ -42,47 +42,10 @@
 using android::base::GetProperty;
 using android::init::property_set;
 
-
-void connect_properties(std::string network, std::string type)
+void gsm_properties()
 {
-    if (network =="GSM") {
-         /* GSM */
-         if (type == "3G") {
-            /* 3G */
-            property_override("ro.telephony.default_network", "3");
-            property_override("telephony.lteOnGsmDevice", "0");
-        } else if (network =="LTE") {
-            /* LTE */
-            property_override("ro.telephony.default_network", "9");
-            property_override("telephony.lteOnGsmDevice", "1");
-        }
-    } else if (network =="cdma") {
-         /* CDMA */            
-        if (network =="LTE") {
-            /* LTE */
-            property_override("ro.telephony.default_network", "9");
-            property_override("telephony.lteOnGsmDevice", "1");
-        } else {
-            /* 3G */
-            property_override("ro.telephony.default_network", "3");
-            property_override("telephony.lteOnGsmDevice", "0");
-        }
-    } else if (network =="wcdma") {
-         /* WCDMA */
-        if (network =="LTE") {
-            /* LTE */
-            property_override("ro.telephony.default_network", "9");
-            property_override("telephony.lteOnGsmDevice", "1");
-        } else {
-            /* 3G */
-            property_override("ro.telephony.default_network", "3");
-            property_override("telephony.lteOnGsmDevice", "0");
-        }
-    } else  {
-        /* WiFi Only */
-        property_override("ro.carrier", "wifi-only");
-        property_override("ro.radio.noril", "1");
-	}
+    property_set("ro.telephony.default_network", "9");
+    property_set("telephony.lteOnGsmDevice", "1");
 }
 
 void init_target_properties()
@@ -98,37 +61,34 @@ void init_target_properties()
         property_override_dual("ro.build.description", "ro.vendor.build.description", "milletwifixx-user 5.0.2 LRX22G T330XXU1BOJ4 release-keys");
         property_override("ro.product.model", "SM-T330");
         property_override_dual("ro.product.device", "ro.vendor.device", "milletwifi");
-        connect_properties("", "");
     } else if (bootloader.find("T330XX") == 0) {
         /* milletwifixx */
         property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/milletwifixx/milletwifi:5.0.2/LRX22G/T330XXU1BOJ4:user/release-keys");
         property_override_dual("ro.build.description", "ro.vendor.build.description", "milletwifixx-user 5.0.2 LRX22G T330XXU1BOJ4 release-keys");
         property_override("ro.product.model", "SM-T330");
         property_override_dual("ro.product.device", "ro.vendor.device", "milletwifi");
-        connect_properties("", "");
     } else if (bootloader.find("T331XX") == 0) {
         /* milletltetmo */
         property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/millet3gxx/millet3g:5.0.2/LRX22G/T331XXU1BOD8:user/release-keys");
         property_override_dual("ro.build.description", "ro.vendor.build.description", "millet3gxx-user 5.0.2 LRX22G T331XXU1BOD8 release-keys");
         property_override("ro.product.model", "SM-T331");
         property_override_dual("ro.product.device", "ro.vendor.device", "millet3g");
-        connect_properties("GSM", "3G");
     } else if (bootloader.find("T335XX") == 0) {
         /* milletltexx */
         property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/milletltexx/milletlte:5.0.2/LRX22G/T335XXU1BOD8:user/release-keys");
         property_override_dual("ro.build.description", "ro.vendor.build.description", "milletltexx-user 5.0.2 LRX22G T335XXU1BOD8 release-keys");
         property_override("ro.product.model", "SM-T335");
         property_override_dual("ro.product.device", "ro.vendor.device", "milletlte");
-        connect_properties("GSM", "LTE");
+        gsm_properties();
     } else if (bootloader.find("T337T") == 0) {
         /* milletltetmo */
         property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/milletltetmo/milletltetmo:5.1.1/LMY47X/T337TUVS1CPL1:user/release-keys");
         property_override_dual("ro.build.description", "ro.vendor.build.description", "milletltetmo-user 5.1.1 LMY47X T337TUVS1CPL1 release-keys");
         property_override("ro.product.model", "SM-T337T");
         property_override_dual("ro.product.device", "ro.vendor.device", "milletltetmo");
-        connect_properties("GSM", "LTE");
+        gsm_properties();
     } else {
-        connect_properties("GSM", "3G");
+        gsm_properties();
     }
 
     std::string device = GetProperty("ro.product.device", "");
