@@ -19,12 +19,11 @@ include device/samsung/millet-common/BoardConfigCommon.mk
 # Assert
 TARGET_OTA_ASSERT_DEVICE := millet,milletltetmo
 
+# Build Fingerprint
+BUILD_FINGERPRINT := samsung/milletltetmo/milletltetmo:5.1.1/LMY47X/T337TUVS1CPL1:user/release-keys
+
 # Kernel
 TARGET_KERNEL_CONFIG := lineage_milletltetmo_defconfig
-
-# Init
-TARGET_INIT_VENDOR_LIB := libinit_msm8226
-TARGET_LIBINIT_MSM8226_DEFINES_FILE := device/samsung/milletltetmo/init/init_millet.cpp
 
 # Radio/RIL
 include $(COMMON_PATH)/radio/single/board.mk
