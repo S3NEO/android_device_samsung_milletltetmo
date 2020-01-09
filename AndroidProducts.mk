@@ -15,3 +15,8 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/lineage_milletltetmo.mk
+
+COMMON_LUNCH_CHOICES := \
+    lineage_milletltetmo-user \
+    lineage_milletltetmo-userdebug \
+    lineage_milletltetmo-eng
