@@ -31,10 +31,7 @@ PRODUCT_COPY_FILES += \
 
 # IR Blaster
 PRODUCT_PACKAGES += \
-    android.hardware.ir@1.0-service \
-    android.hardware.ir@1.0-impl \
-    consumerir.default \
-    consumerir.msm8226
+    android.hardware.ir@1.0-service.samsung
 
 # Vibrator
 PRODUCT_PACKAGES += \
