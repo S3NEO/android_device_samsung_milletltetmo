@@ -19,9 +19,6 @@ include device/samsung/millet-common/BoardConfigCommon.mk
 # Assert
 TARGET_OTA_ASSERT_DEVICE := millet,milletltetmo
 
-# Build Fingerprint
-BUILD_FINGERPRINT := samsung/milletltetmo/milletltetmo:5.1.1/LMY47X/T337TUVS1CPL1:user/release-keys
-
 # Kernel
 TARGET_KERNEL_CONFIG := lineage_milletltetmo_defconfig
 
