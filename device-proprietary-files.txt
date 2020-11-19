@@ -1,3 +1,3 @@
-## GSM Blobs - Pinned to T337TUVS1CPL1_T337TTMB1CPL1 versions
+## GSM Blobs - Pinned to Samsung Galaxy S5 Mini G800HXXU1CRJ1_G800HXEO1CRJ1
 # Radio
-lib/libsec-ril.so:vendor/lib/libsec-ril.so
+lib/libsec-ril.so:vendor/lib/libsec-ril.so|6215658f58ea4c92cb70f761dfefdb22cbab5f38
