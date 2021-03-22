@@ -17,16 +17,16 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
+# IR Blaster
+PRODUCT_PACKAGES += \
+    android.hardware.ir@1.0-service.samsung
+
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/milletltetmo/overlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
-
-# IR Blaster
-PRODUCT_PACKAGES += \
-    android.hardware.ir@1.0-service.samsung
 
 # Vibrator
 PRODUCT_PACKAGES += \
