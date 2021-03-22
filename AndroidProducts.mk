@@ -14,7 +14,7 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_milletltetmo.mk
+    device/samsung/milletltetmo/lineage_milletltetmo.mk
 
 COMMON_LUNCH_CHOICES := \
     lineage_milletltetmo-user \

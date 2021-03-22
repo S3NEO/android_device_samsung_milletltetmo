@@ -16,10 +16,11 @@
 # inherit from common millet
 include device/samsung/millet-common/BoardConfigCommon.mk
 
-DEVICE_PATH := device/samsung/milletltetmo
-
 # Assert
 TARGET_OTA_ASSERT_DEVICE := millet,milletltetmo
+
+# HIDL
+DEVICE_MANIFEST_FILE += device/samsung/milletltetmo/manifest.xml
 
 # Kernel
 TARGET_KERNEL_CONFIG := lineage_milletltetmo_defconfig
@@ -27,11 +28,8 @@ TARGET_KERNEL_CONFIG := lineage_milletltetmo_defconfig
 # Radio/RIL
 include $(COMMON_PATH)/radio/single/board.mk
 
-# HIDL
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
-
 # SELinux
-include $(DEVICE_PATH)/sepolicy/sepolicy.mk
+include device/samsung/milletltetmo/sepolicy/sepolicy.mk
 
 # inherit from the proprietary version
 -include vendor/samsung/milletltetmo/BoardConfigVendor.mk
