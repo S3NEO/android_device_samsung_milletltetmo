@@ -32,4 +32,4 @@ include $(COMMON_PATH)/radio/single/board.mk
 include device/samsung/milletltetmo/sepolicy/sepolicy.mk
 
 # inherit from the proprietary version
--include vendor/samsung/milletltetmo/BoardConfigVendor.mk
+include vendor/samsung/milletltetmo/BoardConfigVendor.mk
