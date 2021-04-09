@@ -33,7 +33,7 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl
 
 # Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/samsung/milletltetmo/milletltetmo-vendor.mk)
+$(call inherit-product, vendor/samsung/milletltetmo/milletltetmo-vendor.mk)
 
 # common millet
 $(call inherit-product, device/samsung/millet-common/millet.mk)
